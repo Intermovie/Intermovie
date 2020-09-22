@@ -27,7 +27,7 @@
 
 ### Built With
 
-* []()
+* [Anaconda](https://www.anaconda.com/)
 * []()
 * []()
 
@@ -39,7 +39,6 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-*
 
 ```sh
 ```
@@ -48,9 +47,15 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
 
-```sh
-git clone https://github.com/Intermovie/Intermovie.git
-```
+    ```sh
+    git clone https://github.com/Intermovie/Intermovie.git
+    ```
+
+2. Create a conda virtual environment with
+
+    ```sh
+    conda create --name <env> --file requirements.txt
+    ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
