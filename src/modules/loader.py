@@ -11,15 +11,20 @@ ZIP_REMOTE_PATH = 'https://stdatalake005.blob.core.windows.net/public/movies_dat
 ZIP_LOCAL_PATH = '../data/movies_dataset.zip'
 RAW_LOCAL_PATH = '../data/RAW/'
 CURATED_LOCAL_PATH = '../data/CURATED/'
+# RAW_LOCAL_PATH = 'data/RAW/'
+# CURATED_LOCAL_PATH = 'data/CURATED/'
 
 
 class IntermovieDataLoader:
 
-    def split_data(self, filename, column_name, value=None):
-        """Break raw data into many files."""
-        if path.exists(CURATED_LOCAL_PATH + value + '.csv') is True:
-            return
+    def split_data(self, filename, column_name, values=None):
+        """Break raw data into one or many files.
 
+        Args:
+            filename (str): source file name
+            column_name (str): header column of tsv/csv file
+            values (list, optional): values to extract. Defaults to None.
+        """
         with open(RAW_LOCAL_PATH + filename, encoding='utf-8') as file_stream:
             file_stream_reader = csv.DictReader(file_stream, delimiter='\t')
 
@@ -32,15 +37,15 @@ class IntermovieDataLoader:
 
                 # Open a new file and write the header
                 if column_value not in open_files_references:
-                    if value is None or (value is not None and column_value == value):
+                    if values is None or (values is not None and column_value in values):
                         output_file = open(
-                            CURATED_LOCAL_PATH + '{}.csv'.format(column_value), 'w', encoding='utf-8', newline='')
+                            CURATED_LOCAL_PATH + f'{column_value}.csv', 'w', encoding='utf-8', newline='')
                         dictionary_writer = csv.DictWriter(
                             output_file, fieldnames=file_stream_reader.fieldnames)
                         dictionary_writer.writeheader()
                         open_files_references[column_value] = output_file, dictionary_writer
 
-                if value is None or (value is not None and column_value == value):
+                if values is None or (values is not None and column_value in values):
                     # Always write the row
                     open_files_references[column_value][1].writerow(row)
 
@@ -98,4 +103,5 @@ class IntermovieDataLoader:
 
 
 if __name__ == "__main__":
-    print(sys.maxsize)
+    IntermovieDataLoader().split_data('title.principals.tsv',
+                                      'category', ['actor', 'actress'])
