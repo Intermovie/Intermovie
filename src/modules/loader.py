@@ -10,9 +10,7 @@ csv.field_size_limit(10000000)
 ZIP_REMOTE_PATH = 'https://stdatalake005.blob.core.windows.net/public/movies_dataset.zip'
 ZIP_LOCAL_PATH = '../data/movies_dataset.zip'
 RAW_LOCAL_PATH = '../data/RAW/'
-CURATED_LOCAL_PATH = '../../data/CURATED/'
-# RAW_LOCAL_PATH = 'data/RAW/'
-# CURATED_LOCAL_PATH = 'data/CURATED/'
+CURATED_LOCAL_PATH = '../data/CURATED/'
 
 
 class IntermovieDataLoader:
