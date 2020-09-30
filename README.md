@@ -55,4 +55,4 @@ To get a local copy up and running follow these simple steps.
     1. Actors by movie : cast.movies.csv
     2. US movies (keeping french title) and avrage ratings : movies.us.ratings.csv
     3. Average ratings of different genres : genres.ratings.csv
-    4. Average rating of each actor based to the movies in which he appears : actor.ratings.csv
+    4. Average rating of each actor based to the movies in which he appears : actors.ratings.csv
