@@ -1,10 +1,9 @@
 data/
+!data/**/.gitkeep
 
 # Python
 __pycache__/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
 # VSCode
 .vscode/
+

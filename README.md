@@ -16,32 +16,22 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Intermovie Screen Shot][product-screenshot]](https://example.com)
+[![Intermovie Screen Shot][product-screenshot]](https://simplonline-v3-prod.s3.eu-west-3.amazonaws.com/media/image/jpeg/33e920cb-ac57-41da-81e2-f7174d2139ca.jpeg)
 
 ### Built With
 
 * [Anaconda](https://www.anaconda.com/)
-* []()
-* []()
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-```sh
-```
 
 ### Installation
 
@@ -60,4 +50,9 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* Run intermovie.ipynb
+* Outputs
+    1. Actors by movie : cast.movies.csv
+    2. US movies (keeping french title) and avrage ratings : movies.us.ratings.csv
+    3. Average ratings of different genres : genres.ratings.csv
+    4. Average rating of each actor based to the movies in which he appears : actor.ratings.csv

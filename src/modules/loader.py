@@ -5,12 +5,12 @@ import requests
 import sys
 import zipfile
 
-csv.field_size_limit(1000000)
+csv.field_size_limit(10000000)
 
 ZIP_REMOTE_PATH = 'https://stdatalake005.blob.core.windows.net/public/movies_dataset.zip'
 ZIP_LOCAL_PATH = '../data/movies_dataset.zip'
 RAW_LOCAL_PATH = '../data/RAW/'
-CURATED_LOCAL_PATH = '../data/CURATED/'
+CURATED_LOCAL_PATH = '../../data/CURATED/'
 # RAW_LOCAL_PATH = 'data/RAW/'
 # CURATED_LOCAL_PATH = 'data/CURATED/'
 
@@ -25,6 +25,7 @@ class IntermovieDataLoader:
             column_name (str): header column of tsv/csv file
             values (list, optional): values to extract. Defaults to None.
         """
+
         with open(RAW_LOCAL_PATH + filename, encoding='utf-8') as file_stream:
             file_stream_reader = csv.DictReader(file_stream, delimiter='\t')
 
@@ -103,5 +104,4 @@ class IntermovieDataLoader:
 
 
 if __name__ == "__main__":
-    IntermovieDataLoader().split_data('title.principals.tsv',
-                                      'category', ['actor', 'actress'])
+    pass
